@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@keyframes animateBackground {
+    0% {
+        background: #491215;
+    }
+    50% {
+        background: #511418;
+    }
+    100% {
+        background: #491215;
+    }
+}
+
+body {
+    font-family: 'VT323', monospace;
+    animation: animateBackground 12s ease-in-out infinite;
+}

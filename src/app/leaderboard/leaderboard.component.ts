@@ -9,14 +9,17 @@ import { ScoreService } from '../services/score.service';
 })
 export class LeaderboardComponent implements OnInit {
 
+  public rankings: any[] = [];
+
   constructor(private _scoreService: ScoreService) { }
 
   ngOnInit() {
     this._scoreService
       .GetTopScores()
       .subscribe(
-        scores => {
+        (scores: any[]) => {
           console.log('scores', scores);
+          this.rankings = scores;
         }
       );
   }

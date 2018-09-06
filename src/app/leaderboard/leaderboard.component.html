@@ -1,3 +1,19 @@
-<p>
-  leaderboard works!
-</p>
+<div class="leaderboard">
+  <header>
+    <h1 class="leaderboard__headline">High Scores</h1>
+  </header>
+  <table class="leaderboard__scores">
+    <tbody>
+      <th class="leaderboard__header">Rank</th>
+      <th class="leaderboard__header">Name</th>
+      <th class="leaderboard__header">Score</th>
+      <tr
+        *ngFor="let player of rankings; let i = index"
+        [ngClass]="{'leaderboard__row_top': i === 0}">
+        <td class="leaderboard__data">{{i + 1}}</td>
+        <td class="leaderboard__data">{{player.name}}</td>
+        <td class="leaderboard__data">{{player.score}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
