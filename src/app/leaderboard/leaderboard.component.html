@@ -1,18 +1,22 @@
 <div class="leaderboard">
-  <header>
-    <h1 class="leaderboard__headline">High Scores</h1>
+  <header class="leaderboard__header">
+    <h1 class="leaderboard__headline">Top Ten</h1>
+    <p class="leaderboard__description">Family Day Video Game</p>
+    <p class="leaderboard__description">Oct 20, 2018</p>
   </header>
   <table class="leaderboard__scores">
-    <tbody>
+    <!-- <thead>
       <th class="leaderboard__header">Rank</th>
       <th class="leaderboard__header">Name</th>
-      <th class="leaderboard__header">Score</th>
+      <th class="leaderboard__header leaderboard__header_score">Score</th>
+    </thead> -->
+    <tbody>
       <tr
         *ngFor="let player of rankings; let i = index"
         [ngClass]="{'leaderboard__row_top': i === 0}">
-        <td class="leaderboard__data">{{i + 1}}</td>
+        <td class="leaderboard__data leaderboard__data_rank">{{i + 1}}</td>
         <td class="leaderboard__data">{{player.name}}</td>
-        <td class="leaderboard__data">{{player.score}}</td>
+        <td class="leaderboard__data leaderboard__data_score">{{player.score}}</td>
       </tr>
     </tbody>
   </table>
