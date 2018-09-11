@@ -40,12 +40,12 @@ $max_font: 75px;
         @include fluid-type($min_width, $max_width, 48px, 200px);
         color: #fff;
         background-color: #005394;
-        padding-left: 10%;
+        padding-left: 9%;
         margin: 2.5% 0;
     }
 
     .leaderboard__description {
-        padding-left: 10%;
+        padding-left: 9%;
         @include fluid-type($min_width, $max_width, 24px, 48px);
         margin: 0;
         color: #727172;
