@@ -24,7 +24,7 @@
 $min_width: 320px;
 $max_width: 1200px;
 $min_font: 16px;
-$max_font: 75px;
+$max_font: 32px;
 
 .leaderboard {
     margin: 0 auto;
@@ -33,22 +33,24 @@ $max_font: 75px;
 }
 
     .leaderboard__header {
-        margin: 0 0 2.5% 2.5%;
+        margin: 0 0 1.5% 2.5%;
     }
 
     .leaderboard__headline {
-        @include fluid-type($min_width, $max_width, 48px, 200px);
+        @include fluid-type($min_width, $max_width, 30px, 135px);
         color: #fff;
         background-color: #005394;
-        padding-left: 10%;
+        padding-left: 8.5%;
+        padding-top: 5%;
         margin: 2.5% 0;
     }
 
     .leaderboard__description {
-        padding-left: 10%;
-        @include fluid-type($min_width, $max_width, 24px, 48px);
+        padding-left: 8.5%;
+        @include fluid-type($min_width, $max_width, 18px, 24px);
         margin: 0;
         color: #727172;
+        font-weight: bold;
     }
 
     .leaderboard__scores {
@@ -74,6 +76,9 @@ $max_font: 75px;
         .leaderboard__data {
             @include fluid-type($min_width, $max_width, $min_font, $max_font);
             text-align: left;
+            font-weight: bold;
+            padding-top: 20px;
+            padding-bottom: 8px;
             &_rank {
                 padding-left: 5%;
             }
