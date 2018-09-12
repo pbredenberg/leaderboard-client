@@ -158,7 +158,27 @@
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
   }
-  .crt {
-    // animation: textShadow 3.6s infinite;
-  }
+
+@keyframes scanline {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.crt__scanline {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    display: block;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+    content: " ";
+    background: rgba(167, 167, 167, 0);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    animation: scanline 4s infinite linear;
+}
   
