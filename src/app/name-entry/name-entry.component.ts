@@ -24,6 +24,17 @@ export class NameEntryComponent implements OnInit {
 
     constructor(private _scoreService: ScoreService) { }
 
+    /**
+     * Checks if the game is at zero index and if it's created/updated
+     * timatestamps match. This indicates a new game with unrecorded
+     * player data.
+     * @param index
+     * @param game
+     */
+    isGameViable(index: number, game) {
+        return index === 0 && _.get(game, 'timeUpdated', 0) === _.get(game, 'timeCreated', 1);
+    }
+
     send(i) {
         // Construct an array of names.
         console.log('submit index', i);
@@ -73,7 +84,7 @@ export class NameEntryComponent implements OnInit {
                 games => {
                     const currentGames = this.games;
                     const newGame = _.get(games, '[0]');
-                    if (newGame) {
+                    if (this.isGameViable(0, newGame)) {
                         currentGames.push(newGame);
                     }
                     this.games = _.uniqWith(currentGames, _.isEqual);

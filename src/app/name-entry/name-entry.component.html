@@ -1,11 +1,16 @@
 <div class="name_entry content">
     <div class="wrapper__name_entry">
+        <ng-container *ngIf="games.length === 0">
+            <header class="name_entry__waiting">
+                <h1>Waiting for players...</h1>
+            </header>
+        </ng-container>
         <div class="form"
             *ngFor="let game of games; let i = index">
-            <ng-container *ngIf="i === 0">
+            <ng-container *ngIf="isGameViable(i, game)">
                 <header class="name_entry__text">
                     <h1>Record Your High Scores</h1>
-                    <p>For the game that ended: {{ game.timestamp | date: 'short' }}</p>
+                    <p>For the game that ended: {{ game.timeCreated | date: 'short' }}</p>
                 </header>
                 <div class="form__row">
                     <label class="name_entry__text_effects form__label text_color__blue" for="player_1">Player 1 Enter Name</label>

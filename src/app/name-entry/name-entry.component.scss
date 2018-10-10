@@ -3,6 +3,14 @@
     display: flex;
     flex-flow: column;
     align-content: center;
+    &__text,
+    &__waiting {
+        color: #fff;
+        animation: textShadow 5s infinite, textSkew 5s infinite;
+    }
+    &__waiting {
+        text-align: center;
+    }
 }
 
 .wrapper__name_entry {
@@ -11,10 +19,5 @@
 }
 
 .name_entry__text_effects {
-    animation: textShadow 5s infinite, textSkew 5s infinite;
-}
-
-.name_entry__text {
-    color: #fff;
     animation: textShadow 5s infinite, textSkew 5s infinite;
 }
