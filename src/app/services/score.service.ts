@@ -9,8 +9,26 @@ export class ScoreService {
   /**
    * Performs GET from server to retrieve top scores.
    */
-  public GetTopScores() {
+  public getTopScores() {
     return this._http.get('http://localhost:3000/top-scores');
+  }
+
+  /**
+   * GET games.
+   */
+  public getGames() {
+    return this._http.get('http://localhost:3000/games');
+  }
+
+  /**
+   * POST single game.
+   * @param game
+   */
+  public updateGame(game: any) {
+      return this._http.post(
+        'http://localhost:3000/games',
+        game
+      );
   }
 
 }

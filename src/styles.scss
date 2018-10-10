@@ -5,9 +5,11 @@
 @import './assets/scss/layout';
 // Animations
 @import './assets/scss/animations/crt';
+@import './assets/scss/animations/text';
 // Global Elements
 @import './assets/scss/colors';
 @import './assets/scss/forms';
+@import './assets/scss/buttons';
 // Components
 @import './app/leaderboard/leaderboard.component.scss';
 @import './app/name-entry/name-entry.component.scss';

@@ -1,0 +1,19 @@
+.button,
+input[type="button"] {
+    border: transparent;
+    background: $blue;
+    color: $black;
+    padding: 16px;
+    font-size: 32px;
+    font-family: $font;
+    text-transform: uppercase;
+    cursor: pointer;
+    animation: textShadow 5s infinite, textSkew 5s infinite;
+    position: relative;
+    &:active {
+        top: 1px;
+    }
+    &:focus {
+        outline: none;
+    }
+}

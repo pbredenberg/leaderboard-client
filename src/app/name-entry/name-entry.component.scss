@@ -9,3 +9,12 @@
     flex: 0 0 90%;
     text-transform: uppercase;
 }
+
+.name_entry__text_effects {
+    animation: textShadow 5s infinite, textSkew 5s infinite;
+}
+
+.name_entry__text {
+    color: #fff;
+    animation: textShadow 5s infinite, textSkew 5s infinite;
+}

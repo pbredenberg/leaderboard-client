@@ -19,7 +19,7 @@ export class LeaderboardComponent implements OnInit {
 
   private _updateScores() {
     this._scoreService
-      .GetTopScores()
+      .getTopScores()
       .subscribe(
         (scores: any[]) => {
           console.log('scores', scores);
