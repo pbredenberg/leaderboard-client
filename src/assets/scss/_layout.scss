@@ -1,7 +1,19 @@
 // Global styles
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: $font;
     margin: 0;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.content {
+    height: 100%;
 }
 
 .wrapper {

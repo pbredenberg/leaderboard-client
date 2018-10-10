@@ -1,24 +1,25 @@
 .form {
-    width: 100%;
+    // Fluid type overrides.
+    $min_font: 16px;
+    $max_font: 32px;
+    width: 90%;
+    margin: 0 auto;
     @include fluid-type($min_width, $max_width, $min_font, $max_font);
-}
-
-.form__row {
-    padding: 5% 0;
-}
-
-    .form__label {
-        display: block;
+    .form__row {
+        padding: 2.5% 0;
     }
-
-    .form__input {
-        padding: 12px;
-        width: 100%;
-        background: $black;
-        text-transform: uppercase;
-        font-family: $font;
-        @include fluid-type($min_width, $max_width, $min_font, $max_font);
-        &:focus {
-            outline: none;
+        .form__label {
+            display: block;
         }
-    }
+        .form__input {
+            padding: 12px;
+            width: 100%;
+            background: $black;
+            text-transform: uppercase;
+            font-family: $font;
+            @include fluid-type($min_width, $max_width, $min_font, $max_font);
+            &:focus {
+                outline: none;
+            }
+        }
+}

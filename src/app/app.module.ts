@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +22,7 @@ import { NameEntryComponent } from './name-entry/name-entry.component';
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    FormsModule,
     HttpClientModule,
   ],
   providers: [],

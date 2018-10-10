@@ -131,6 +131,9 @@
       text-shadow: 2.6208764473832513px 0 1px $animationTextShadow, -2.6208764473832513px 0 1px $animationTextShadowBackground, 0 0 3px;
     }
   }
+  .crt {
+      height: 100%;
+  }
   .crt::after {
     content: " ";
     display: block;

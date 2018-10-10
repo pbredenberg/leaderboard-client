@@ -1,3 +1,11 @@
 .name_entry {
     background: $black;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+}
+
+.wrapper__name_entry {
+    flex: 0 0 90%;
+    text-transform: uppercase;
 }
