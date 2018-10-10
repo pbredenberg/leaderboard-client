@@ -1,0 +1,24 @@
+.form {
+    width: 100%;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+.form__row {
+    padding: 5% 0;
+}
+
+    .form__label {
+        display: block;
+    }
+
+    .form__input {
+        padding: 12px;
+        width: 100%;
+        background: $black;
+        text-transform: uppercase;
+        font-family: $font;
+        @include fluid-type($min_width, $max_width, $min_font, $max_font);
+        &:focus {
+            outline: none;
+        }
+    }

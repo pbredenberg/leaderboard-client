@@ -1,23 +1,25 @@
 <div class="leaderboard">
-  <header class="leaderboard__header">
-    <h1 class="leaderboard__headline">Top 10</h1>
-    <p class="leaderboard__description">Family Day Video Game</p>
-    <p class="leaderboard__description">Oct 20, 2018</p>
-  </header>
-  <table class="leaderboard__scores">
-    <!-- <thead>
-      <th class="leaderboard__header">Rank</th>
-      <th class="leaderboard__header">Name</th>
-      <th class="leaderboard__header leaderboard__header_score">Score</th>
-    </thead> -->
-    <tbody>
-      <tr
-        *ngFor="let player of rankings; let i = index"
-        [ngClass]="{'leaderboard__row_top': i === 0}">
-        <td class="leaderboard__data leaderboard__data_rank">{{i + 1}}</td>
-        <td class="leaderboard__data">{{player.name}}</td>
-        <td class="leaderboard__data leaderboard__data_score">{{player.score}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="wrapper">
+        <header class="header leaderboard__header">
+            <h1 class="leaderboard__headline">Top 10</h1>
+            <p class="leaderboard__description">Family Day Video Game</p>
+            <p class="leaderboard__description">Oct 20, 2018</p>
+        </header>
+        <table class="leaderboard__scores">
+            <!-- <thead>
+            <th class="leaderboard__header">Rank</th>
+            <th class="leaderboard__header">Name</th>
+            <th class="leaderboard__header leaderboard__header_score">Score</th>
+            </thead> -->
+            <tbody>
+            <tr
+                *ngFor="let player of rankings; let i = index"
+                [ngClass]="{'leaderboard__row_top': i === 0}">
+                <td class="leaderboard__data leaderboard__data_rank">{{i + 1}}</td>
+                <td class="leaderboard__data">{{player.name}}</td>
+                <td class="leaderboard__data leaderboard__data_score">{{player.score}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

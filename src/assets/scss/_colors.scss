@@ -1,0 +1,29 @@
+.text_color {
+    &__yellow {
+        color: $yellow;
+    }
+    &__orange {
+        color: $orange;
+    }
+    &__blue {
+        color: $blue;
+    }
+    &__green {
+        color: $green;
+    }
+}
+
+.border_color {
+    &__yellow {
+        border: 2px solid $yellow;
+    }
+    &__orange {
+        border: 2px solid $orange;
+    }
+    &__blue {
+        border: 2px solid $blue;
+    }
+    &__green {
+        border: 2px solid $green;
+    }
+}

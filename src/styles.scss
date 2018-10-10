@@ -5,13 +5,9 @@
 @import './assets/scss/layout';
 // Animations
 @import './assets/scss/animations/crt';
+// Global Elements
+@import './assets/scss/colors';
+@import './assets/scss/forms';
 // Components
 @import './app/leaderboard/leaderboard.component.scss';
 @import './app/name-entry/name-entry.component.scss';
-
-// Global styles
-body {
-    font-family: 'VT323', monospace;
-    background: #ffffff;
-    margin: 0;
-}

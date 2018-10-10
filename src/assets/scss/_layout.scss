@@ -1,0 +1,15 @@
+// Global styles
+body {
+    font-family: $font;
+    margin: 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: $max_width;
+    text-transform: uppercase;
+}
+
+.header {
+    margin: 0 0 2.5% 2.5%;
+}
