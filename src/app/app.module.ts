@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { NameEntryComponent } from './name-entry/name-entry.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    NameEntryComponent
   ],
   imports: [
     BrowserModule,

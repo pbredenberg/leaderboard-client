@@ -1,9 +1,17 @@
+// Settings, variables, functions
+@import './assets/scss/settings';
+@import './assets/scss/mixins';
+// Space and Layout
+@import './assets/scss/layout';
 // Animations
 @import './assets/scss/animations/crt';
+// Components
+@import './app/leaderboard/leaderboard.component.scss';
+@import './app/name-entry/name-entry.component.scss';
 
 // Global styles
 body {
     font-family: 'VT323', monospace;
-    background: #d7d5d7;
+    background: #ffffff;
     margin: 0;
 }

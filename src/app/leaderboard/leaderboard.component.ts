@@ -7,7 +7,6 @@ import 'rxjs/add/operator/takeWhile';
 @Component({
   selector: 'app-leaderboard',
   templateUrl: './leaderboard.component.html',
-  styleUrls: ['./leaderboard.component.scss'],
   providers: [ScoreService]
 })
 export class LeaderboardComponent implements OnInit {
