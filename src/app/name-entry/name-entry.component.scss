@@ -11,6 +11,17 @@
     &__waiting {
         text-align: center;
     }
+    .form__row {
+        position: relative;
+        .player__awards {
+            position: absolute;
+            right: 14px;
+            bottom: 28px;
+            .player__award {
+                width: 45px;
+            }
+        }
+    }
 }
 
 .wrapper__name_entry {

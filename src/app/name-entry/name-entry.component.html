@@ -15,18 +15,30 @@
                 <div class="form__row">
                     <label class="name_entry__text_effects form__label text_color__blue" for="player_1">Player 1 Enter Name</label>
                     <input class="name_entry__text_effects form__input text_color__blue border_color__blue" id="player_1" type="text" [(ngModel)]="player1Name">
+                    <span class="player__awards">
+                        <app-player-award [playerIndex]="0" [currentGame]="game"></app-player-award>
+                    </span>
                 </div>
                 <div class="form__row">
-                    <label class="name_entry__text_effects form__label text_color__yellow" for="player_1">Player 2 Enter Name</label>
-                    <input class="name_entry__text_effects form__input text_color__yellow border_color__yellow" id="player_1" type="text" [(ngModel)]="player2Name">
+                    <label class="name_entry__text_effects form__label text_color__yellow" for="player_2">Player 2 Enter Name</label>
+                    <input class="name_entry__text_effects form__input text_color__yellow border_color__yellow" id="player_2" type="text" [(ngModel)]="player2Name">
+                    <span class="player__awards">
+                        <app-player-award [playerIndex]="1" [currentGame]="game"></app-player-award>
+                    </span>                    
                 </div>
                 <div class="form__row">
-                    <label class="name_entry__text_effects form__label text_color__green" for="player_1">Player 3 Enter Name</label>
-                    <input class="name_entry__text_effects form__input text_color__green border_color__green" id="player_1" type="text" [(ngModel)]="player3Name">
+                    <label class="name_entry__text_effects form__label text_color__green" for="player_3">Player 3 Enter Name</label>
+                    <input class="name_entry__text_effects form__input text_color__green border_color__green" id="player_3" type="text" [(ngModel)]="player3Name">
+                    <span class="player__awards">
+                        <app-player-award [playerIndex]="2" [currentGame]="game"></app-player-award>
+                    </span>                    
                 </div>
                 <div class="form__row">
-                    <label class="name_entry__text_effects form__label text_color__orange" for="player_1">Player 4 Enter Name</label>
-                    <input class="name_entry__text_effects form__input text_color__orange border_color__orange" id="player_1" type="text" [(ngModel)]="player4Name">
+                    <label class="name_entry__text_effects form__label text_color__orange" for="player_4">Player 4 Enter Name</label>
+                    <input class="name_entry__text_effects form__input text_color__orange border_color__orange" id="player_4" type="text" [(ngModel)]="player4Name">
+                    <span class="player__awards">
+                        <app-player-award [playerIndex]="3" [currentGame]="game"></app-player-award>
+                    </span>                    
                 </div>    
                 <div class="form__row">
                     <input class="button" type="button" value="Send" (click)="send(i)">

@@ -15,9 +15,21 @@
             <tr
                 *ngFor="let player of rankings; let i = index"
                 [ngClass]="{'leaderboard__row_top': i === 0}">
-                <td class="leaderboard__data leaderboard__data_rank">{{i + 1}}</td>
-                <td class="leaderboard__data">{{player.name}}</td>
-                <td class="leaderboard__data leaderboard__data_score">{{player.score}}</td>
+                <td class="leaderboard__data leaderboard__data_rank">
+                    {{i + 1}}
+                </td>
+                <td class="leaderboard__data">
+                    {{player.name}}
+                </td>
+                <td class="leaderboard__data leaderboard__data_score">
+                    <img class="leaderboard__award leaderboard__award_panda"
+                        *ngIf="player.hasPanda"
+                        src="assets/img/panda.gif" alt="Panda Award">
+                    <img class="leaderboard__award leaderboard__award_raven"
+                        *ngIf="player.hasRaven"
+                        src="assets/img/raven.gif" alt="Raven Award">
+                    {{player.score}}
+                </td>
             </tr>
             </tbody>
         </table>

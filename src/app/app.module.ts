@@ -8,13 +8,15 @@ import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { NameEntryComponent } from './name-entry/name-entry.component';
+import { PlayerAwardComponent } from './player-award/player-award.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LeaderboardComponent,
-    NameEntryComponent
+    NameEntryComponent,
+    PlayerAwardComponent
   ],
   imports: [
     BrowserModule,

@@ -28,6 +28,7 @@
         width: 100%;
         border-collapse: collapse;
         border-spacing: 0px;
+        border-bottom: 1px solid #aaa8aa;
         tr {
             &:nth-child(odd) {
                 background-color: #aaa8aa;
@@ -48,11 +49,27 @@
             text-align: left;
             animation: textShadow 5s infinite, textSkew 5s infinite;
             color: rgb(7, 34, 8);
+            position: relative;
             &_rank {
                 padding-left: 5%;
             }
             &_score {
                 text-align: right;
                 padding-right: 5%;
+            }
+        }
+
+        .leaderboard__award {
+            width: 50px;
+            position: absolute;
+            top: calc(50% - 20px);
+            &.leaderboard__award_raven {
+                top: auto;
+                bottom: -10px;
+                right: 5px;
+                left: auto;
+            }
+            &.leaderboard__award_panda {
+                left: 5px;
             }
         }
