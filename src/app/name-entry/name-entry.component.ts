@@ -31,8 +31,8 @@ export class NameEntryComponent implements OnInit {
      * @param index
      * @param game
      */
-    isGameViable(index: number, game) {
-        return index === 0 && get(game, 'timeUpdated', 0) === get(game, 'timeCreated', 1);
+    isGameViable(game) {
+        return get(game, 'timeUpdated', 0) === get(game, 'timeCreated', 1);
     }
 
     send(i) {
@@ -86,10 +86,14 @@ export class NameEntryComponent implements OnInit {
             .subscribe(
                 games => {
                     const currentGames = this.games;
-                    const newGame = get(games, '[0]');
-                    if (this.isGameViable(0, newGame)) {
-                        currentGames.push(newGame);
-                    }
+                    each(
+                        games,
+                        (g, i) => {
+                            if (this.isGameViable(g)) {
+                                currentGames.push(g);
+                            }
+                        }
+                    );
                     this.games = uniqWith(currentGames, isEqual);
                     console.log('updated games', this.games);
                 }

@@ -7,10 +7,10 @@
         </ng-container>
         <div class="form"
             *ngFor="let game of games; let i = index">
-            <ng-container *ngIf="isGameViable(i, game)">
+            <ng-container *ngIf="i === 0">
                 <header class="name_entry__text">
                     <h1>Record Your High Scores</h1>
-                    <p>For the game that ended: {{ game.timeCreated | date: 'short' }}</p>
+                    <p>For the game that ended: {{ game.timeCreated | date: 'short' }} | {{i + 1}} of {{games.length}}</p>
                 </header>
                 <div class="form__row" *ngIf="game?.players[0]?.score > 0">
                     <label class="name_entry__text_effects form__label text_color__blue" for="player_1">Blue Player Enter Name <span *ngIf="isWinner(i, game?.players[0]?.score)">(Winner!!!)</span></label>

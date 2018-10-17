@@ -18,7 +18,7 @@ export class ScoreService {
    * GET games.
    */
   public getGames() {
-    return this._http.get(environment.api_url + '/games');
+    return this._http.get(environment.api_url + '/new-games');
   }
 
   /**
