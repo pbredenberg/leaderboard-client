@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ScoreService } from '../services/score.service';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import 'rxjs/add/operator/takeWhile';
+import {filter} from 'lodash';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LeaderboardComponent implements OnInit {
 
   public rankings: any[] = [];
 
-  private _pollTime = 10000;
+  private _pollTime = 5000;
 
   constructor(private _scoreService: ScoreService) { }
 
@@ -26,6 +27,10 @@ export class LeaderboardComponent implements OnInit {
           this.rankings = scores;
         }
       );
+  }
+
+  public get displayableRankings(): any[] {
+    return filter(this.rankings, r => r.isRenamed);
   }
 
   ngOnInit() {

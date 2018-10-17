@@ -1,7 +1,7 @@
 <div class="leaderboard content">
     <div class="wrapper">
         <header class="header leaderboard__header">
-            <h1 class="leaderboard__headline">Top 10</h1>
+            <h1 class="leaderboard__headline">Top 25</h1>
             <p class="leaderboard__description">Family Day Video Game</p>
             <p class="leaderboard__description">Oct 20, 2018</p>
         </header>
@@ -13,7 +13,7 @@
             </thead> -->
             <tbody>
             <tr
-                *ngFor="let player of rankings; let i = index"
+                *ngFor="let player of displayableRankings; let i = index"
                 [ngClass]="{'leaderboard__row_top': i === 0}">
                 <td class="leaderboard__data leaderboard__data_rank">
                     {{i + 1}}

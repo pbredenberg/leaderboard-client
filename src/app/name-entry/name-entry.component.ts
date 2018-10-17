@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScoreService } from '../services/score.service';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
-import * as _ from 'lodash';
+import {sortBy, get, reduce, uniqWith, isEqual, each} from 'lodash';
 
 @Component({
   selector: 'app-name-entry',
@@ -32,14 +32,14 @@ export class NameEntryComponent implements OnInit {
      * @param game
      */
     isGameViable(index: number, game) {
-        return index === 0 && _.get(game, 'timeUpdated', 0) === _.get(game, 'timeCreated', 1);
+        return index === 0 && get(game, 'timeUpdated', 0) === get(game, 'timeCreated', 1);
     }
 
     send(i) {
         // Construct an array of names.
         console.log('submit index', i);
         const relatedGame = this.games[i];
-        const result = _.reduce(
+        const result = reduce(
             [this.player1Name, this.player2Name, this.player3Name, this.player4Name],
             (r, val, key) => {
                 const arr = r && !!r.length ? r : [];
@@ -47,9 +47,10 @@ export class NameEntryComponent implements OnInit {
                     arr.push(
                         {
                             name: val,
-                            score: _.get(relatedGame, 'players[' + key + '].score'),
-                            caughtPanda: _.get(relatedGame, 'players[' + key + '].caughtPanda'),
-                            foundRaven: _.get(relatedGame, 'players[' + key + '].foundRaven')
+                            score: get(relatedGame, 'players[' + key + '].score'),
+                            caughtPanda: get(relatedGame, 'players[' + key + '].caughtPanda'),
+                            foundRaven: get(relatedGame, 'players[' + key + '].foundRaven'),
+                            isRenamed: true
                         }
                     );
                 }
@@ -62,7 +63,7 @@ export class NameEntryComponent implements OnInit {
             .updateGame(relatedGame)
             .subscribe(
                 response => {
-                    const updateResult = _.get(response, 'msg');
+                    const updateResult = get(response, 'msg');
                     if (updateResult === 'success') {
                         console.log('result', response);
                         this.games.splice(i, 1);
@@ -85,14 +86,22 @@ export class NameEntryComponent implements OnInit {
             .subscribe(
                 games => {
                     const currentGames = this.games;
-                    const newGame = _.get(games, '[0]');
+                    const newGame = get(games, '[0]');
                     if (this.isGameViable(0, newGame)) {
                         currentGames.push(newGame);
                     }
-                    this.games = _.uniqWith(currentGames, _.isEqual);
+                    this.games = uniqWith(currentGames, isEqual);
                     console.log('updated games', this.games);
                 }
             );
+    }
+
+    isWinner(
+        gameIndex: number,
+        playerScore: number
+    ) {
+        const highestScore = sortBy(this.games[gameIndex].players, p => p.score).pop();
+        return highestScore.score === playerScore;
     }
 
     ngOnInit() {
