@@ -13,13 +13,13 @@
             </thead> -->
             <tbody>
             <tr
-                *ngFor="let player of displayableRankings; let i = index"
+                *ngFor="let player of rankings; let i = index"
                 [ngClass]="{'leaderboard__row_top': i === 0}">
                 <td class="leaderboard__data leaderboard__data_rank">
                     {{i + 1}}
                 </td>
                 <td class="leaderboard__data">
-                    {{player.name}}
+                    {{ getName(player) }}
                 </td>
                 <td class="leaderboard__data leaderboard__data_score">
                     <img class="leaderboard__award leaderboard__award_panda"

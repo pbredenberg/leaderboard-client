@@ -29,8 +29,8 @@ export class LeaderboardComponent implements OnInit {
       );
   }
 
-  public get displayableRankings(): any[] {
-    return filter(this.rankings, r => r.isRenamed);
+  public getName(player: any) {
+      return player.isRenamed ? player.name : 'New Player';
   }
 
   ngOnInit() {

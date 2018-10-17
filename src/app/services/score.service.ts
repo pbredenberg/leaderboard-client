@@ -11,7 +11,7 @@ export class ScoreService {
    * Performs GET from server to retrieve top scores.
    */
   public getTopScores() {
-    return this._http.get(environment.api_url + '/top-scores');
+    return this._http.get(environment.api_url + '/top-scores?limit=25');
   }
 
   /**
