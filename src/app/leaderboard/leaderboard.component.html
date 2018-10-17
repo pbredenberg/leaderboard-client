@@ -28,7 +28,7 @@
                     <img class="leaderboard__award leaderboard__award_raven"
                         *ngIf="player.foundRaven"
                         src="assets/img/raven.gif" alt="Raven Award">
-                    {{player.score}}
+                    {{player.score | number:0}}
                 </td>
             </tr>
             </tbody>

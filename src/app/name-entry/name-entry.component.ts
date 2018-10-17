@@ -47,7 +47,9 @@ export class NameEntryComponent implements OnInit {
                     arr.push(
                         {
                             name: val,
-                            score: _.get(relatedGame, 'players[' + key + '].score')
+                            score: _.get(relatedGame, 'players[' + key + '].score'),
+                            caughtPanda: _.get(relatedGame, 'players[' + key + '].caughtPanda'),
+                            foundRaven: _.get(relatedGame, 'players[' + key + '].foundRaven')
                         }
                     );
                 }
