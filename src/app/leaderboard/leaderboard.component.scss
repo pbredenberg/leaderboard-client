@@ -47,7 +47,7 @@
         .leaderboard__data {
             @include fluid-type($min_width, $max_width, $min_font, $max_font);
             text-align: left;
-            animation: textShadow 5s infinite, textSkew 5s infinite;
+            animation: textShadow 10s infinite, textSkew 10s infinite;
             color: rgb(7, 34, 8);
             position: relative;
             &_rank {

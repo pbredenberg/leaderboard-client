@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ScoreService {
@@ -10,14 +11,14 @@ export class ScoreService {
    * Performs GET from server to retrieve top scores.
    */
   public getTopScores() {
-    return this._http.get('http://localhost:3000/top-scores');
+    return this._http.get(environment.api_url + '/top-scores');
   }
 
   /**
    * GET games.
    */
   public getGames() {
-    return this._http.get('http://localhost:3000/games');
+    return this._http.get(environment.api_url + '/games');
   }
 
   /**
@@ -26,7 +27,7 @@ export class ScoreService {
    */
   public updateGame(game: any) {
       return this._http.post(
-        'http://localhost:3000/games',
+        environment.api_url + '/games',
         game
       );
   }

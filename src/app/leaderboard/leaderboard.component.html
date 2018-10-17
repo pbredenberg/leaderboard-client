@@ -23,10 +23,10 @@
                 </td>
                 <td class="leaderboard__data leaderboard__data_score">
                     <img class="leaderboard__award leaderboard__award_panda"
-                        *ngIf="player.hasPanda"
+                        *ngIf="player.caughtPanda"
                         src="assets/img/panda.gif" alt="Panda Award">
                     <img class="leaderboard__award leaderboard__award_raven"
-                        *ngIf="player.hasRaven"
+                        *ngIf="player.foundRaven"
                         src="assets/img/raven.gif" alt="Raven Award">
                     {{player.score}}
                 </td>

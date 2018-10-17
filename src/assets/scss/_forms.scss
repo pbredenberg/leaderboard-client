@@ -14,7 +14,7 @@
         .form__input {
             padding: 12px;
             width: 100%;
-            background: $black;
+            background: rgba(58, 47, 47, 0.8);
             text-transform: uppercase;
             font-family: $font;
             @include fluid-type($min_width, $max_width, $min_font, $max_font);

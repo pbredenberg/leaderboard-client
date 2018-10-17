@@ -14,16 +14,14 @@ export class PlayerAwardComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() {
-        console.log(this.hasRaven);
+    ngOnInit() {}
+
+    public get foundRaven() {
+        return _.get(this.currentGame, 'players[' + this.playerIndex + '].foundRaven', false);
     }
 
-    protected get hasRaven() {
-        return _.get(this.currentGame, 'players[' + this.playerIndex + '].hasRaven', false);
-    }
-
-    protected get hasPanda() {
-        return _.get(this.currentGame, 'players[' + this.playerIndex + '].hasPanda', false);
+    public get caughtPanda() {
+        return _.get(this.currentGame, 'players[' + this.playerIndex + '].caughtPanda', false);
     }
 
 }

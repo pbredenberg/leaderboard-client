@@ -9,7 +9,7 @@ export const appRoutes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/leaderboard',
+        redirectTo: 'leaderboard',
         pathMatch: 'full'
     },
     {
