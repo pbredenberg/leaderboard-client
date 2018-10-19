@@ -51,7 +51,8 @@
             color: rgb(7, 34, 8);
             position: relative;
             &_rank {
-                padding-left: 5%;
+                padding-right: 5%;
+                text-align: right;
             }
             &_score {
                 text-align: right;
@@ -61,15 +62,4 @@
 
         .leaderboard__award {
             width: 50px;
-            position: absolute;
-            top: calc(50% - 20px);
-            &.leaderboard__award_raven {
-                top: auto;
-                bottom: -10px;
-                right: 5px;
-                left: auto;
-            }
-            &.leaderboard__award_panda {
-                left: 5px;
-            }
         }
