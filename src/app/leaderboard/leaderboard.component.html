@@ -22,13 +22,17 @@
                     {{ getName(player) }}
                 </td>
                 <td class="leaderboard__data leaderboard__data_score">
+                    {{player.score | number:0}}
+                </td>
+                <td class="leaderboard__data">
                     <img class="leaderboard__award leaderboard__award_panda"
                         *ngIf="player.caughtPanda"
                         src="assets/img/panda.gif" alt="Panda Award">
+                </td>
+                <td class="leaderboard__data">
                     <img class="leaderboard__award leaderboard__award_raven"
                         *ngIf="player.foundRaven"
                         src="assets/img/raven.gif" alt="Raven Award">
-                    {{player.score | number:0}}
                 </td>
             </tr>
             </tbody>
