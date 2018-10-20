@@ -108,6 +108,10 @@ export class NameEntryComponent implements OnInit {
         return highestScore.score === playerScore;
     }
 
+    canSubmit() {
+      return _.filter([ this.player1Name, this.player2Name, this.player3Name, this.player4Name ], _.identity).length > 0;
+    }
+
     ngOnInit() {
         this._getUpdatedGames();
 

@@ -38,9 +38,9 @@
                     <input class="name_entry__text_effects form__input text_color__orange border_color__orange" id="player_4" type="text" [(ngModel)]="player4Name">
                     <span class="player__awards">
                         <app-player-award [playerIndex]="3" [currentGame]="game"></app-player-award>
-                    </span>                    
-                </div>    
-                <div class="form__row">
+                    </span>
+                </div>
+                <div class="form__row" *ngIf="canSubmit()">
                     <input class="button" type="button" value="Send" (click)="send(i)">
                 </div>
             </ng-container>
