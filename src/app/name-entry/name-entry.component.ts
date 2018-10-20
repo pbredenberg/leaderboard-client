@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScoreService } from '../services/score.service';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
-import {sortBy, get, reduce, uniqWith, isEqual, each} from 'lodash';
+import {sortBy, get, reduce, uniqWith, isEqual, each, filter, identity} from 'lodash';
 
 @Component({
   selector: 'app-name-entry',
@@ -106,6 +106,10 @@ export class NameEntryComponent implements OnInit {
     ) {
         const highestScore = sortBy(this.games[gameIndex].players, p => p.score).pop();
         return highestScore.score === playerScore;
+    }
+
+    canSubmit() {
+      return filter([ this.player1Name, this.player2Name, this.player3Name, this.player4Name ], identity).length > 0;
     }
 
     ngOnInit() {
