@@ -14,34 +14,34 @@
                 </header>
                 <div class="form__row" *ngIf="game?.players[0]?.score > 0">
                     <label class="name_entry__text_effects form__label text_color__blue" for="player_1">Blue Player Enter Name <span *ngIf="isWinner(i, game?.players[0]?.score)">(Winner!!!)</span></label>
-                    <input class="name_entry__text_effects form__input text_color__blue border_color__blue" id="player_1" type="text" [(ngModel)]="player1Name">
+                    <input maxlength="20" class="name_entry__text_effects form__input text_color__blue border_color__blue" id="player_1" type="text" [(ngModel)]="player1Name">
                     <span class="player__awards">
                         <app-player-award [playerIndex]="0" [currentGame]="game"></app-player-award>
                     </span>
                 </div>
                 <div class="form__row" *ngIf="game?.players[1]?.score > 0">
                     <label class="name_entry__text_effects form__label text_color__yellow" for="player_2">Yellow Player Enter Name <span *ngIf="isWinner(i, game?.players[1]?.score)">(Winner!!!)</span></label>
-                    <input class="name_entry__text_effects form__input text_color__yellow border_color__yellow" id="player_2" type="text" [(ngModel)]="player2Name">
+                    <input maxlength="20" class="name_entry__text_effects form__input text_color__yellow border_color__yellow" id="player_2" type="text" [(ngModel)]="player2Name">
                     <span class="player__awards">
                         <app-player-award [playerIndex]="1" [currentGame]="game"></app-player-award>
                     </span>                    
                 </div>
                 <div class="form__row" *ngIf="game?.players[2]?.score > 0">
                     <label class="name_entry__text_effects form__label text_color__green" for="player_3">Green Player Enter Name <span *ngIf="isWinner(i, game?.players[2]?.score)">(Winner!!!)</span></label>
-                    <input class="name_entry__text_effects form__input text_color__green border_color__green" id="player_3" type="text" [(ngModel)]="player3Name">
+                    <input maxlength="20" class="name_entry__text_effects form__input text_color__green border_color__green" id="player_3" type="text" [(ngModel)]="player3Name">
                     <span class="player__awards">
                         <app-player-award [playerIndex]="2" [currentGame]="game"></app-player-award>
                     </span>                    
                 </div>
                 <div class="form__row" *ngIf="game?.players[3]?.score > 0">
                     <label class="name_entry__text_effects form__label text_color__orange" for="player_4">Orange Player Enter Name <span *ngIf="isWinner(i, game?.players[3]?.score)">(Winner!!!)</span></label>
-                    <input class="name_entry__text_effects form__input text_color__orange border_color__orange" id="player_4" type="text" [(ngModel)]="player4Name">
+                    <input maxlength="20" class="name_entry__text_effects form__input text_color__orange border_color__orange" id="player_4" type="text" [(ngModel)]="player4Name">
                     <span class="player__awards">
                         <app-player-award [playerIndex]="3" [currentGame]="game"></app-player-award>
                     </span>
                 </div>
                 <div class="form__row" *ngIf="canSubmit()">
-                    <input class="button" type="button" value="Send" (click)="send(i)">
+                    <input maxlength="20" class="button" type="button" value="Send" (click)="send(i)">
                 </div>
             </ng-container>
         </div>
